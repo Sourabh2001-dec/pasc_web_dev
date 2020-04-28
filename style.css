@@ -24,3 +24,61 @@ body{
     height: 90%;
     margin-top: 60px;
 }
+
+.heading-primary-01{
+    display: block;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+}
+
+.heading-primary-02{
+    display: block;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+}
+
+.animated{
+    animation: moveInBottom 0.5s ease-out 0.75s ;
+    animation-fill-mode: backwards;
+
+}
+
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80%{
+        transform: translateX(1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80%{
+        transform: translateX(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0; /*Because at starting opacity is 0*/
+        transform: translateY(30px);/*Starting from left of the side*/
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);/*Final position is orignal*/
+    }
+}
