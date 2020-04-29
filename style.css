@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -17,15 +21,22 @@ body{
 }
 
 #mainpage .mainpage-text h1{
-    font-size: 300%;
-    font-weight: bold;
+    font-size: 450%;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
 }
 #mainpage .mainpage-hero{
-    height: 90%;
-    max-width: 90%;
-
-    margin-top: 60px;
+    width: 80%;
 }
+
+#mainpage .mainpage-text a{
+    background-color: #005a14;
+    border: none;
+    color: white;
+    font-weight: 500;
+}
+
 
 .heading-primary-01{
     display: block;
@@ -84,3 +95,36 @@ body{
         transform: translate(0);/*Final position is orignal*/
     }
 }
+
+/* ============================-------------------about corona section-----------------------================ */
+
+#aboutcorona{
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+
+
+/* -------------------------------------------------media queries------------------------------------------ */
+
+@media only screen and (max-width: 860px) {
+    #mainpage .mainpage-text h1{
+        font-size: 300%;
+       
+    }
+
+    /* #mainpage .mainpage-text{
+        transform: translateY(-20%);
+    } */
+  }
+ @media only screen and (max-width: 500px) {
+    #mainpage .mainpage-hero{
+        width: 90%;
+       
+    }
+
+    #mainpage .mainpage-text{
+        margin-top: 0 !important;
+    } 
+  } 
+
