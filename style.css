@@ -22,5 +22,7 @@ body{
 }
 #mainpage .mainpage-hero{
     height: 90%;
+    max-width: 90%;
+
     margin-top: 60px;
 }
