@@ -103,6 +103,15 @@ body{
     padding-top: 70px;
 }
 
+#aboutcorona p{
+    font-size: large;
+    
+}
+
+#aboutcorona img{
+    width: 50%;
+}
+
 
 
 /* -------------------------------------------------media queries------------------------------------------ */

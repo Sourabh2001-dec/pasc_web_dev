@@ -1,3 +1,5 @@
+
+
 anime({
     targets : '#path5530',
     translateX : '20px',
@@ -7,6 +9,20 @@ anime({
     loop : true,
     easing : 'linear'
 })
+
+anime({
+    targets : '#aboutcorona img',
+    keyframes : [
+        {translateY : '10'},
+        {translateY : '-10'},
+        {translateY : '0'},
+
+    ],
+    easing : 'linear',
+    loop : true,
+    duration : 5000
+})
+
 // anime({
 //     targets : '#path5594',
 //     translateX : '20px',
