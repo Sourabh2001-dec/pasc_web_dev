@@ -1,4 +1,19 @@
+$(window).scroll(function() {
+    if ($(document).scrollTop() > 400) {
+      $('.navbar').addClass('new-nav');
+    } else {
+      $('.navbar').removeClass('new-nav');
+    }
+  });
 
+  $(function () {
+			
+    $.scrollify({
+        section: 'section',
+    });
+
+    
+});
 
 anime({
     targets : '#path5530',
