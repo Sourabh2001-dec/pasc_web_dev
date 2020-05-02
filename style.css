@@ -10,12 +10,22 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+/* .scroll-container {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+  }
+  
+  section {
+	  min-height: 100vh;
+	scroll-snap-align: start;
+  } */
+
 /* =========================navbar classes================================== */
 
 .new-nav {
-background-color: whitesmoke;
-box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-
+	/* background-color: whitesmoke; */
+	/* box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2); */
 }
 
 /* ======================================================================= */
@@ -104,9 +114,10 @@ box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 
 /* ============================-------------------about corona section-----------------------================ */
 
-#aboutcorona {
+#aboutcorona,
+#symptoms {
 	min-height: 100vh;
-	padding-top: 70px;
+	padding-top: 50px;
 }
 
 #aboutcorona p {
@@ -115,6 +126,24 @@ box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 
 #aboutcorona img {
 	width: 50%;
+}
+
+/* ======================= symptoms page ===================================== */
+#symptoms {
+	background-color: rgba(232, 255, 247, 0.33);
+}
+
+#symptoms .card {
+	width: 80%;
+	margin: 0 auto;
+	border: none;
+	background-color: transparent;
+}
+
+#symptoms .card-img-top {
+	border-radius: 50%;
+	box-shadow: 0px 0px 9px 4px #eee;
+	background-color: white;
 }
 
 /* -------------------------------------------------media queries------------------------------------------ */
@@ -133,7 +162,16 @@ box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 		width: 90%;
 	}
 
+	.new-nav {
+		background-color: white;
+		 box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+	}
+
 	#mainpage .mainpage-text {
 		margin-top: 0 !important;
+	}
+
+	#symptoms .card-title {
+		font-size: 80%;
 	}
 }

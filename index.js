@@ -8,9 +8,9 @@ $(window).scroll(function() {
 
   $(function () {
 			
-    $.scrollify({
-        section: 'section',
-    });
+    // $.scrollify({
+    //     section: 'section',
+    // });
 
     
 });
