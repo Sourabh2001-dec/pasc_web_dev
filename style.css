@@ -9,6 +9,12 @@ body {
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
+#aboutcorona,
+#symptoms,
+#stats {
+	min-height: 100vh;
+	padding-top: 50px;
+}
 
 /* .scroll-container {
 	height: 100vh;
@@ -24,8 +30,9 @@ body {
 /* =========================navbar classes================================== */
 
 .new-nav {
-	/* background-color: whitesmoke; */
-	/* box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2); */
+	background: rgb(247, 245, 245) !important;
+	box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+	color : white !important;
 }
 
 /* ======================================================================= */
@@ -114,11 +121,6 @@ body {
 
 /* ============================-------------------about corona section-----------------------================ */
 
-#aboutcorona,
-#symptoms {
-	min-height: 100vh;
-	padding-top: 50px;
-}
 
 #aboutcorona p {
 	font-size: large;
@@ -146,6 +148,8 @@ body {
 	background-color: white;
 }
 
+
+
 /* -------------------------------------------------media queries------------------------------------------ */
 
 @media only screen and (max-width: 860px) {
@@ -161,6 +165,8 @@ body {
 	#mainpage .mainpage-hero {
 		width: 90%;
 	}
+
+	
 
 	.new-nav {
 		background-color: white;
