@@ -228,7 +228,7 @@ body {
 	#symptoms,
 	#stats {
 		min-height: 100vh;
-		padding-top: 80px;
+		padding-top: 30px;
 		padding-bottom: 30px;
 	}
 }
