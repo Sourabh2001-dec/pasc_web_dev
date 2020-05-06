@@ -1,3 +1,7 @@
+
+AOS.init({duration: 900,
+easing : 'ease-in-out'});
+
 $(window).scroll(function() {
     if ($(document).scrollTop() > 400) {
       $('.navbar').addClass('new-nav');
@@ -136,7 +140,7 @@ fetch('https://api.covid19india.org/v2/state_district_wise.json')
 
   function addData(data,type,start = false) {
   
-    chart_config.options.title.text = data.name+" "+type+" COVID-19 cases"
+    chart_config.options.title.text = data.name+" Total "+type+" COVID-19 cases Till Date"
     chart_config.data.datasets.forEach((dataset) => {
         dataset.data = data[type];
     });
@@ -168,7 +172,8 @@ function removeData() {
     });
     myChart.update();
 }
-    
+
+
 
 
 

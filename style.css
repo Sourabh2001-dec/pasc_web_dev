@@ -12,8 +12,9 @@ body {
 #aboutcorona,
 #symptoms,
 #stats {
-	min-height: 100vh;
-	padding-top: 50px;
+	min-height: 102vh;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 /* .scroll-container {
@@ -30,9 +31,21 @@ body {
 /* =========================navbar classes================================== */
 
 .new-nav {
-	background: rgb(247, 245, 245) !important;
+	background: rgb(67, 47, 104) !important;
 	box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+.new-nav a {
 	color: white !important;
+}
+
+.navbar a {
+	color: black;
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 150%;
 }
 
 /* ======================================================================= */
@@ -145,7 +158,6 @@ body {
 	transform-origin: center;
 }
 
-
 #symptoms .img-top {
 	border-radius: 50%;
 	box-shadow: 0px 0px 9px 4px #eee;
@@ -153,28 +165,26 @@ body {
 	transform-origin: center;
 }
 
-
 .card {
 	perspective: 1000px;
 }
 
-.card-front{
+.card-front {
 	z-index: 2;
 }
 
 .card-wrapper:hover .card {
 	transform: rotateY(180deg);
-	
 }
 
-.card-wrapper{
+.card-wrapper {
 	position: relative;
 }
 
 .card-front,
 .card-back {
 	width: 100% !important;
-	margin : 0 auto 0 auto;
+	margin: 0 auto 0 auto;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	transform-origin: center;
@@ -197,12 +207,10 @@ body {
 	z-index: 1;
 }
 
-.card-back p{
+.card-back p {
 	margin-top: 50%;
-	transform : translateY(-50%)
+	transform: translateY(-50%);
 }
-
-
 
 /* -------------------------------------------------media queries------------------------------------------ */
 
@@ -214,6 +222,15 @@ body {
 	/* #mainpage .mainpage-text{
         transform: translateY(-20%);
     } */
+}
+@media only screen and (min-width: 500px) {
+	#aboutcorona,
+	#symptoms,
+	#stats {
+		min-height: 100vh;
+		padding-top: 80px;
+		padding-bottom: 30px;
+	}
 }
 @media only screen and (max-width: 500px) {
 	#mainpage .mainpage-hero {
