@@ -118,10 +118,7 @@ fetch('https://api.covid19india.org/v2/state_district_wise.json')
           let date = info['date'].split("-")
           date = date[0] +" "+ date[1]
           state[info.status+'_date'].push(date)
-          if (capKey !== "TT") {
-            
-            state_select.insertAdjacentHTML('beforeend',`<option value=${capKey}>${state.name}</option>`)
-          }
+          
         }
         }
        

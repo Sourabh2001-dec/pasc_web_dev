@@ -32,7 +32,7 @@ body {
 .new-nav {
 	background: rgb(247, 245, 245) !important;
 	box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
-	color : white !important;
+	color: white !important;
 }
 
 /* ======================================================================= */
@@ -121,7 +121,6 @@ body {
 
 /* ============================-------------------about corona section-----------------------================ */
 
-
 #aboutcorona p {
 	font-size: large;
 }
@@ -140,12 +139,67 @@ body {
 	margin: 0 auto;
 	border: none;
 	background-color: transparent;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	height: 100% !important;
+	transform-origin: center;
 }
 
-#symptoms .card-img-top {
+
+#symptoms .img-top {
 	border-radius: 50%;
 	box-shadow: 0px 0px 9px 4px #eee;
 	background-color: white;
+	transform-origin: center;
+}
+
+
+.card {
+	perspective: 1000px;
+}
+
+.card-front{
+	z-index: 2;
+}
+
+.card-wrapper:hover .card {
+	transform: rotateY(180deg);
+	
+}
+
+.card-wrapper{
+	position: relative;
+}
+
+.card-front,
+.card-back {
+	width: 100% !important;
+	margin : 0 auto 0 auto;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform-origin: center;
+}
+
+.card-back {
+	/* width: 100%;
+	border-radius: 50%; */
+	position: absolute;
+	transform: translateY(-100%);
+	transform: rotateY(180deg);
+	background-color: wheat !important;
+	box-shadow: 0px 0px 9px 4px #eee;
+	height: 80%;
+	padding: 0 10%;
+	border-radius: 16px;
+	text-align: center;
+	color: rgb(92, 92, 92);
+	font-size: 90%;
+	z-index: 1;
+}
+
+.card-back p{
+	margin-top: 50%;
+	transform : translateY(-50%)
 }
 
 
@@ -165,12 +219,13 @@ body {
 	#mainpage .mainpage-hero {
 		width: 90%;
 	}
-
-	
+	#stats #info .card-body {
+		width: 100%;
+	}
 
 	.new-nav {
 		background-color: white;
-		 box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
 	}
 
 	#mainpage .mainpage-text {
