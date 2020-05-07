@@ -9,7 +9,9 @@ body {
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
-#mainpage,
+#mainpage{
+	height: 100vh;
+}
 #aboutcorona,
 #symptoms,
 #stats,
@@ -55,13 +57,7 @@ body {
 	background-color: #e6fdd3;
 }
 
-#path5528 .cls-3{
-	fill : #6e6fcc
-}
 
-#path5530 .cls-4{
-fill: #40409b;
-}
 
 
 #mainpage .row {
