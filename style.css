@@ -219,21 +219,18 @@ footer{
 
 .content{
     list-style: none;
-	float: left;
 	margin-top: 2rem;
 }
 
 .social{
     list-style: none;
-    float: right;
-	margin-left: 220px;
 	margin-top: 1.5rem;
 }
 
 .content li,
 .social li{
     display: inline-block;
-	margin-right: 20px !important;
+	margin-right: 20px;
 }
 
 .content li:last-child,
