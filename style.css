@@ -163,6 +163,8 @@ body {
 	box-shadow: 0px 0px 9px 4px #eee;
 	background-color: white;
 	transform-origin: center;
+	transition: box-shadow 0.6s;
+
 }
 
 .card {
@@ -172,44 +174,21 @@ body {
 .card-front {
 	z-index: 2;
 }
-
-.card-wrapper:hover .card {
-	transform: rotateY(180deg);
+#symptoms .img-top:hover{
+	box-shadow: 0px 0px 20px 4px rgb(96, 94, 94);
+	
 }
 
 .card-wrapper {
 	position: relative;
 }
 
-.card-front,
-.card-back {
+.card-front{
 	width: 100% !important;
 	margin: 0 auto 0 auto;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	transform-origin: center;
-}
-
-.card-back {
-	/* width: 100%;
-	border-radius: 50%; */
-	position: absolute;
-	transform: translateY(-100%);
-	transform: rotateY(180deg);
-	background-color: wheat !important;
-	box-shadow: 0px 0px 9px 4px #eee;
-	height: 80%;
-	padding: 0 10%;
-	border-radius: 16px;
-	text-align: center;
-	color: rgb(92, 92, 92);
-	font-size: 90%;
-	z-index: 1;
-}
-
-.card-back p {
-	margin-top: 50%;
-	transform: translateY(-50%);
 }
 
 /* -------------------------------------------------media queries------------------------------------------ */
