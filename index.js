@@ -4,12 +4,17 @@ easing : 'ease-in-out'});
 
 $(window).scroll(function() {
     if ($(document).scrollTop() > 400) {
-      $('.navbar').addClass('new-nav');
+      $('.navbar').addClass('new-nav navbar-dark');
     } else {
-      $('.navbar').removeClass('new-nav');
+      $('.navbar').removeClass('new-nav navbar-dark');
+      $('.navbar').addClass('navbar-light');
     }
   });
 
+  $('.navbar-nav .nav-link').click(function(){
+    $('.navbar-nav .nav-link').removeClass('active');
+    $(this).addClass('active');
+})
 
 
 anime({
