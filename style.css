@@ -186,15 +186,9 @@ fill: #40409b;
 #symptoms .card-front {
 	z-index: 2;
 }
-<<<<<<< HEAD
 
 #symptoms .card-wrapper:hover .img-top {
 	box-shadow: 0px 0px 36px 16px rgb(229, 246, 253);
-=======
-#symptoms .img-top:hover{
-	box-shadow: 0px 0px 36px 16px rgb(229,246,253);
-	
->>>>>>> dd58fb3177896b68c8a17e2dd7f861becd1529a9
 }
 
 .card-wrapper {
@@ -207,7 +201,6 @@ fill: #40409b;
 	
 }
 
-<<<<<<< HEAD
 
 
 /* =========================================Prevention Section======================================== */
@@ -226,8 +219,6 @@ fill: #40409b;
 
 
 
-=======
->>>>>>> dd58fb3177896b68c8a17e2dd7f861becd1529a9
 /* -------------------------------------------------media queries------------------------------------------ */
 
 @media only screen and (max-width: 860px) {
