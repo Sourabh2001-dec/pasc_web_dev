@@ -7,44 +7,51 @@ $(window).scroll(function () {
 		$('.navbar').addClass('navbar-light');
 	}
 
-	['#mainpage','#aboutcorona','#symptoms','#stats','#Prevention','#news'].forEach((element) => {
-		if($(window).scrollTop() >= ($(element).position().top - 300)){
+	[
+		'#mainpage',
+		'#aboutcorona',
+		'#symptoms',
+		'#stats',
+		'#Prevention',
+		'#news',
+	].forEach((element) => {
+		if ($(window).scrollTop() >= $(element).position().top - 300) {
 			$('.navbar .nav-link').removeClass('active');
-			$(`.navbar a[href="${element}"]`).addClass('active')
+			$(`.navbar a[href="${element}"]`).addClass('active');
 		}
-	})
+	});
 });
 
+function navToggler(toggle){
+	if (toggle.getAttribute('class') == 'navbar-toggler-icon') {
+		toggle.setAttribute('class', '');
+		toggle.style.fontSize = '200%';
+		toggle.innerHTML = '&times;';
+	} else {
+		toggle.innerHTML = '';
+		toggle.style.fontSize = '100%';
+		toggle.setAttribute('class', 'navbar-toggler-icon');
+	}
+}
+
 document.querySelectorAll('.navbar-toggler').forEach((element) => {
-	element.addEventListener('click',()=>{
-		let toggle = element.children[0]
-		if (toggle.getAttribute('class') == 'navbar-toggler-icon') {
-			toggle.setAttribute('class','')
-			toggle.style.fontSize = "200%"
-			toggle.innerHTML = "&times;"
+	element.addEventListener('click', () => {
+		if (window.innerWidth <= 767) {
+			let toggle = element.children[0];
+			navToggler(toggle)
+			
 		}
-		else{
-			toggle.innerHTML = ""
-			toggle.style.fontSize = "100%"
-			toggle.setAttribute('class','navbar-toggler-icon')
-		}
-	})
-})
+	});
+});
+
 document.querySelectorAll('.nav-item').forEach((element) => {
-	element.addEventListener('click',()=>{
-		let toggle = document.querySelector('.navbar-toggler').children[0]
-		if (toggle.getAttribute('class') == 'navbar-toggler-icon') {
-			toggle.setAttribute('class','')
-			toggle.style.fontSize = "200%"
-			toggle.innerHTML = "&times;"
+	element.addEventListener('click', () => {
+		if (window.innerWidth <= 767) {
+			let toggle = document.querySelector('.navbar-toggler').children[0];
+			navToggler(toggle)
 		}
-		else{
-			toggle.innerHTML = ""
-			toggle.style.fontSize = "100%"
-			toggle.setAttribute('class','navbar-toggler-icon')
-		}
-	})
-})
+	});
+});
 
 anime({
 	targets: '#path5530',
@@ -197,7 +204,6 @@ function addData(data, type, start = false) {
 		];
 }
 
-
 const news_list = document.querySelector('#news ul');
 
 function check_keyword(str, words) {
@@ -228,15 +234,11 @@ var key_words = [
 	'cases',
 ];
 
-
-fetch(
-	'https://newsapi.org/v2/top-headlines?country=in',
-	{
+fetch('https://newsapi.org/v2/top-headlines?country=in', {
 	headers: {
-		'X-Api-Key' : '1c1bbfbd422c4b2ba5a1b3b705f5d8e7'
-	  }
-	}
-)
+		'X-Api-Key': '1c1bbfbd422c4b2ba5a1b3b705f5d8e7',
+	},
+})
 	.then((res) => res.json())
 	.then((data) => {
 		data.articles.forEach((data) => {
@@ -244,6 +246,15 @@ fetch(
 			if (check_keyword(str, key_words)) {
 				var date = new Date(data.publishedAt);
 				date = date.toDateString().split(' ');
+				var raw = data.title.split('-');
+				let by = raw[raw.length - 1];
+				let title = '';
+				for (let i = 0; i < raw.length; i++) {
+					const word = raw[i];
+					if (i !== raw.length - 1) {
+						title += word;
+					}
+				}
 				news_list.insertAdjacentHTML(
 					'beforeend',
 					`<div class="row my-4" data-aos="fade-up"
@@ -252,11 +263,11 @@ fetch(
               <img src="${data.urlToImage}" class="news_img" alt="">
             </div>
             <div class="col-md-9">
-              <h4>${data.title}</h4>
+              <h4>${title}</h4>
               <div>
                 ${data.description}... <a href="${data.url}">Read More</a>
                 <p class="mt-2">
-                By <i>${data.author}</i> and Published on <b>${date[1]} ${date[2]}, ${date[3]}</b>
+                By <i>${by}</i> and Published on <b>${date[1]} ${date[2]}, ${date[3]}</b>
                 </p>
               </div>
             </div>
@@ -265,4 +276,3 @@ fetch(
 			}
 		});
 	});
-
