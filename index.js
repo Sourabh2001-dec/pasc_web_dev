@@ -1,18 +1,37 @@
 AOS.init({ duration: 900, easing: 'ease-in-out' });
 
+
+
+window.addEventListener('DOMContentLoaded',function () {
+	
+	
+	
+	
+});
+
+
+
+
 $(window).scroll(function () {
-	if ($(document).scrollTop() > 400) {
+	if ($(window).scrollTop() > 400) {
 		$('.navbar').addClass('new-nav navbar-dark');
 	} else {
 		$('.navbar').removeClass('new-nav navbar-dark');
 		$('.navbar').addClass('navbar-light');
 	}
+
+	['#mainpage','#aboutcorona','#symptoms','#stats','#Prevention','#news'].forEach((element) => {
+		if($(window).scrollTop() >= ($(element).position().top - 300)){
+			$('.navbar .nav-link').removeClass('active');
+			$(`.navbar a[href="${element}"]`).addClass('active')
+		}
+	})
 });
 
-$('.navbar-nav .nav-link').click(function () {
-	$('.navbar-nav .nav-link').removeClass('active');
-	$(this).addClass('active');
-});
+// $('.navbar-nav .nav-link').click(function () {
+// 	$('.navbar-nav .nav-link').removeClass('active');
+// 	$(this).addClass('active');
+// });
 
 anime({
 	targets: '#path5530',
@@ -194,14 +213,15 @@ var key_words = [
 	'pandemic',
 	'lockdown',
 	'virus',
-  'containment',
-  'social distancing',
-  'quarantine',
-  'incubation',
-  'isolation',
-  'community spread',
-  'cases'
+	'containment',
+	'social distancing',
+	'quarantine',
+	'incubation',
+	'isolation',
+	'community spread',
+	'cases',
 ];
+
 
 fetch(
 	'https://newsapi.org/v2/top-headlines?apiKey=1c1bbfbd422c4b2ba5a1b3b705f5d8e7&country=in'
@@ -211,11 +231,11 @@ fetch(
 		data.articles.forEach((data) => {
 			const str = data.title.toLowerCase();
 			if (check_keyword(str, key_words)) {
-        var date = new Date(data.publishedAt);
-						date = date.toDateString().split(' ');
+				var date = new Date(data.publishedAt);
+				date = date.toDateString().split(' ');
 				news_list.insertAdjacentHTML(
 					'beforeend',
-          `<div class="row my-4" data-aos="fade-up"
+					`<div class="row my-4" data-aos="fade-up"
           data-aos-anchor-placement="top-bottom">
             <div class="col-md-3">
               <img src="${data.urlToImage}" class="news_img" alt="">
