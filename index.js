@@ -1,17 +1,4 @@
-AOS.init({ duration: 900, easing: 'ease-in-out' });
-
-
-
-window.addEventListener('DOMContentLoaded',function () {
-	
-	
-	
-	
-});
-
-
-
-
+AOS.init({ duration: 500, easing: 'ease-in-out-quad' });
 $(window).scroll(function () {
 	if ($(window).scrollTop() > 400) {
 		$('.navbar').addClass('new-nav navbar-dark');
@@ -28,10 +15,36 @@ $(window).scroll(function () {
 	})
 });
 
-// $('.navbar-nav .nav-link').click(function () {
-// 	$('.navbar-nav .nav-link').removeClass('active');
-// 	$(this).addClass('active');
-// });
+document.querySelectorAll('.navbar-toggler').forEach((element) => {
+	element.addEventListener('click',()=>{
+		let toggle = element.children[0]
+		if (toggle.getAttribute('class') == 'navbar-toggler-icon') {
+			toggle.setAttribute('class','')
+			toggle.style.fontSize = "200%"
+			toggle.innerHTML = "&times;"
+		}
+		else{
+			toggle.innerHTML = ""
+			toggle.style.fontSize = "100%"
+			toggle.setAttribute('class','navbar-toggler-icon')
+		}
+	})
+})
+document.querySelectorAll('.nav-item').forEach((element) => {
+	element.addEventListener('click',()=>{
+		let toggle = document.querySelector('.navbar-toggler').children[0]
+		if (toggle.getAttribute('class') == 'navbar-toggler-icon') {
+			toggle.setAttribute('class','')
+			toggle.style.fontSize = "200%"
+			toggle.innerHTML = "&times;"
+		}
+		else{
+			toggle.innerHTML = ""
+			toggle.style.fontSize = "100%"
+			toggle.setAttribute('class','navbar-toggler-icon')
+		}
+	})
+})
 
 anime({
 	targets: '#path5530',
@@ -184,13 +197,6 @@ function addData(data, type, start = false) {
 		];
 }
 
-function removeData() {
-	// chart.data.labels.pop();
-	chart_config.data.datasets.forEach((dataset) => {
-		dataset.data.pop();
-	});
-	myChart.update();
-}
 
 const news_list = document.querySelector('#news ul');
 
@@ -224,7 +230,12 @@ var key_words = [
 
 
 fetch(
-	'https://newsapi.org/v2/top-headlines?apiKey=1c1bbfbd422c4b2ba5a1b3b705f5d8e7&country=in'
+	'https://newsapi.org/v2/top-headlines?country=in',
+	{
+	headers: {
+		'X-Api-Key' : '1c1bbfbd422c4b2ba5a1b3b705f5d8e7'
+	  }
+	}
 )
 	.then((res) => res.json())
 	.then((data) => {
@@ -255,10 +266,3 @@ fetch(
 		});
 	});
 
-// anime({
-//     targets : '#path5594',
-//     translateX : '20px',
-//     direction : 'alternate',
-//     duration : 2000,
-//     loop : true
-// })

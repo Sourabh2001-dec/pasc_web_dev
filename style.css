@@ -26,19 +26,13 @@ body {
 	padding-bottom: 60px;
 }
 
-
-
-/* .scroll-container {
-	height: 100vh;
-	overflow-y: scroll;
-	scroll-snap-type: y mandatory;
-  }
-  
-  section {
-	  min-height: 100vh;
-	scroll-snap-align: start;
-  } */
-
+button:focus {
+    outline: none !important; 
+     /* outline: 5px auto -webkit-focus-ring-color; */
+}
+.navbar-toggler{
+	border: none;
+}
 /* =========================navbar classes================================== */
 
 .new-nav {
