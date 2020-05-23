@@ -22,7 +22,7 @@ $(window).scroll(function () {
 	});
 });
 
-function navToggler(toggle){
+function navToggler(toggle) {
 	if (toggle.getAttribute('class') == 'navbar-toggler-icon') {
 		toggle.setAttribute('class', '');
 		toggle.style.fontSize = '200%';
@@ -38,8 +38,7 @@ document.querySelectorAll('.navbar-toggler').forEach((element) => {
 	element.addEventListener('click', () => {
 		if (window.innerWidth <= 767) {
 			let toggle = element.children[0];
-			navToggler(toggle)
-			
+			navToggler(toggle);
 		}
 	});
 });
@@ -48,7 +47,7 @@ document.querySelectorAll('.nav-item').forEach((element) => {
 	element.addEventListener('click', () => {
 		if (window.innerWidth <= 767) {
 			let toggle = document.querySelector('.navbar-toggler').children[0];
-			navToggler(toggle)
+			navToggler(toggle);
 		}
 	});
 });
@@ -234,11 +233,7 @@ var key_words = [
 	'cases',
 ];
 
-fetch('https://newsapi.org/v2/top-headlines?country=in', {
-	headers: {
-		'X-Api-Key': '1c1bbfbd422c4b2ba5a1b3b705f5d8e7',
-	},
-})
+fetch('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=in&apiKey=1c1bbfbd422c4b2ba5a1b3b705f5d8e7')
 	.then((res) => res.json())
 	.then((data) => {
 		data.articles.forEach((data) => {
