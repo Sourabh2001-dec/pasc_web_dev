@@ -233,7 +233,7 @@ var key_words = [
 	'cases',
 ];
 
-fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=1c1bbfbd422c4b2ba5a1b3b705f5d8e7')
+fetch('http://newsapi.org/v2/top-headlines?country=in&apiKey=1c1bbfbd422c4b2ba5a1b3b705f5d8e7')
 	.then((res) => res.json())
 	.then((data) => {
 		data.articles.forEach((data) => {
